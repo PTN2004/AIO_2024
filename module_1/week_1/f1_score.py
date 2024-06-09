@@ -22,7 +22,7 @@ def calc_f1_score(tp, fp,fn):
   recall = tp/(tp+fn)
   print('recall is ', recall)
 
-  f1_score = 2*(precition * recall / precition + recall)
+  f1_score = 2*((precition * recall )/ (precition + recall))
   print('f1_score is ', f1_score)
 
 print("---------")

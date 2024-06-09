@@ -2,7 +2,7 @@ import math
 import random
 import sys
 
-def MAE (number_samples):
+def mae (number_samples):
     sum_all_loss = 0
     results = []
     for _ in range(number_samples):
@@ -15,7 +15,7 @@ def MAE (number_samples):
     final_loss = sum_all_loss/number_samples
     return results, final_loss
 
-def MSE (number_samples):
+def mse (number_samples):
     sum_all_loss = 0
     results = []
     for _ in range(number_samples):
@@ -28,7 +28,7 @@ def MSE (number_samples):
     final_loss = sum_all_loss/number_samples
     return results, final_loss
     
-def RMSE (number_samples):
+def rmse (number_samples):
     _ , final_loss = MSE(number_samples)
     return math.sqrt(final_loss)
 
@@ -52,11 +52,11 @@ number_samples = int(number_sample_input)
 loss_name = input('Input loss name (MAE, MSE): ')
 
 if loss_name.lower() == 'mae':
-    results, final_loss = MAE(number_samples)
+    results, final_loss = mae(number_samples)
     output(results, final_loss, loss_name)
 elif loss_name.lower() == 'mse':
     print('Processing...')
-    results, final_loss = MSE(number_samples)
+    results, final_loss = mse(number_samples)
     output(results, final_loss, loss_name)
 else:
     print('Error')
