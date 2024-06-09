@@ -29,7 +29,7 @@ def mse (number_samples):
     return results, final_loss
     
 def rmse (number_samples):
-    _ , final_loss = MSE(number_samples)
+    _ , final_loss = mse(number_samples)
     return math.sqrt(final_loss)
 
 def output(results, final_loss, loss_name):
