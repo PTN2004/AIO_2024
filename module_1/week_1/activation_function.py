@@ -32,7 +32,6 @@ def activation_function():
 
     if is_number(x_input):
         x = float(x_input)
-
         activation_function = input(
             'Input activation function (sigmoid | relu |elu): ')
         if activation_function.lower() == 'sigmoid':
@@ -57,10 +56,7 @@ activation_function()
 while True:
     print("1/Continue     2/exit")
     choose = input("Enter your choose: ")
-
     if choose == '2':
         break
-
     activation_function()
-
 print("____End____")
