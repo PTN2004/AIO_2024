@@ -1,29 +1,30 @@
-def calc_f1_score(tp, fp,fn):
+def calc_f1_score(tp, fp, fn):
 
-  if not isinstance(tp, int):
-    print('Error: tp must be int')
-    return
+    if not isinstance(tp, int):
+        print('Error: tp must be int')
+        return
 
-  if not isinstance(fp, int):
-    print('Error: fp must be int')
-    return
+    if not isinstance(fp, int):
+        print('Error: fp must be int')
+        return
 
-  if not isinstance(fn, int):
-    print('Error: fn must be int')
-    return
+    if not isinstance(fn, int):
+        print('Error: fn must be int')
+        return
 
-  if tp ==0 or fn == 0 or fp == 0:
-    print('Error: tp and fp and fn must be greater than zero')
-    return
+    if tp == 0 or fn == 0 or fp == 0:
+        print('Error: tp and fp and fn must be greater than zero')
+        return
 
-  precition = tp/(tp+fp)
-  print('precition is ', precition)
+    precition = tp/(tp+fp)
+    print('precition is ', precition)
 
-  recall = tp/(tp+fn)
-  print('recall is ', recall)
+    recall = tp/(tp+fn)
+    print('recall is ', recall)
 
-  f1_score = 2*((precition * recall) / (precition + recall))
-  print('f1_score is ', f1_score)
+    f1_score = 2*((precition * recall) / (precition + recall))
+    print('f1_score is ', f1_score)
+
 
 print("---------")
 calc_f1_score(2, 3, 4)
@@ -48,4 +49,3 @@ calc_f1_score(2, 'b', 1)
 
 print("---------")
 calc_f1_score(2, 4, 'c')
-
