@@ -1,6 +1,3 @@
-import random
-
-
 class Queue:
     def __init__(self, capacity):
         self.__capacity = capacity
@@ -43,7 +40,7 @@ print(queue.is_empty())
 
 print("====Queue with random value====")
 for i in range(5):
-    queue.enqueue(random.randint(1, 10))
+    queue.enqueue(i)
 
 print(queue.is_full())
 for i in range(5):
