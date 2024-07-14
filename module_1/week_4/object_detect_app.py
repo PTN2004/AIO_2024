@@ -29,6 +29,20 @@ def annotate_image(image, detections, confidence_threshold=0.5):
             cv2.rectangle(image, (start_x, start_y), (end_x, end_y), 80, 3)
     return image
 
+def annotate_video(video):
+    video = cv2.VideoCapture(video)
+
+    processed_frame = []
+    while True:
+        ret, frame = video.read()
+
+        if not ret:
+            break
+        detections = process_image(frame)
+        process_frame = annotate_image(frame, detections=detections)
+
+        processed_frame.append(process_frame)
+    return processed_frame
 
 def main():
     st.title('Object Detection fo Images')
