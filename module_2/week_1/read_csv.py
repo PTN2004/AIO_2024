@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_csv('module_2/data/advertising.csv')
+df = pd.read_csv('module_2/week_1/data/advertising.csv')
 data = df.to_numpy()
 sales = data[:, 3]
 max_sale = np.max(sales, keepdims=True)
@@ -14,21 +14,26 @@ print(f'The average value of the TV colunm is: {mean_tv}')
 
 # count sales >= 20
 count_sale = np.sum(sales >= 20)
-print(f'The value of the sales colunm greater than or equal to 20 is {count_sale}')
+print(f'The value of the sales colunm greater than or equal to 20 is {
+      count_sale}')
 
-# Calculate the average value of the Radio column that satisfies the condition that 
+# Calculate the average value of the Radio column that satisfies the condition that
 # the corresponding value on the Sales column is greater than or equal to 15
 average = data[:, 1].mean(where=sales >= 15)
-print(f'The average value of the Radio column that satisfies the condition that the corresponding value on the Sales column is greater than or equal to 15 is {average}')
+print(f'The average value of the Radio column that satisfies the condition that the corresponding value on the Sales column is greater than or equal to 15 is {
+      average}')
 
 # There is a value in the sales column where the value in the newspaper
 #  column in that row is greater than or equal to the average of that column
-average_newspaper_cl = data[:,2].mean()
-sum_sales_cl = data[:,3].sum(where=data[:,2] >= average_newspaper_cl)
+average_newspaper_cl = data[:, 2].mean()
+sum_sales_cl = data[:, 3].sum(where=data[:, 2] >= average_newspaper_cl)
 
-print(f'There is a value in the sales column where the value in the newspaper column in that row is greater than or equal to the average of that column {sum_sales_cl}')
+print(f'There is a value in the sales column where the value in the newspaper column in that row is greater than or equal to the average of that column {
+      sum_sales_cl}')
 
 # The new column is score
+
+
 def new_column_condition(value, condition):
     if value > condition:
         return "Good"
@@ -36,6 +41,7 @@ def new_column_condition(value, condition):
         return "Bad"
     else:
         return "Average"
+
 
 average_sales_cl = sales.mean()
 new_column_condition = np.vectorize(new_column_condition)
