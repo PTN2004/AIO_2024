@@ -50,7 +50,5 @@ def compute_cosine(v1, v2):
     return result
 
 
-v1 = np.array([5, 3, 2, 7])
-v2 = np.array([2, 9, 4, 1])
 
-print(compute_cosine(v1, v2))
+print()
