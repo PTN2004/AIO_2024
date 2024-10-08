@@ -26,3 +26,4 @@ plt.show()
 y_predict = decision_tree.predict(X_test)
 score = mean_squared_error(y_test, y_predict)
 print(score)
+
