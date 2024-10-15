@@ -51,10 +51,11 @@ director_data = data.groupby('Director')[['Rating']].mean().head()
 print(director_data)
 
 # 7. Sorting operations
-sort_director_data = data.groupby('Director')[['Rating']].mean().sort_values('Rating', ascending=False).head()
+sort_director_data = data.groupby('Director')[['Rating']].mean(
+).sort_values('Rating', ascending=False).head()
 print(sort_director_data)
 
-# 8. View missing value 
+# 8. View missing value
 missing_value = data.isnull().sum()
 print("Missing value: \n", missing_value)
 
@@ -72,6 +73,8 @@ print('The mean revenue is ', revenue_mean)
 data['Revenue (Millions)'].fillna(revenue_mean, inplace=True)
 
 # 11. Apply functions
+
+
 def rating_group(rating):
     if rating >= 7.5:
         return 'Good'
@@ -79,11 +82,7 @@ def rating_group(rating):
         return 'Average'
     else:
         return 'Bad'
-    
+
+
 data['Rating_Category'] = data['Rating'].apply(rating_group)
 print(data[['Title', 'Director', 'Rating', 'Rating_Category']].head(5))
-
-
-
-
-
